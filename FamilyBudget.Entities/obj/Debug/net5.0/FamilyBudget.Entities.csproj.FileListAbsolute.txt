@@ -1,0 +1,12 @@
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\bin\Debug\net5.0\FamilyBudget.Entities.deps.json
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\bin\Debug\net5.0\FamilyBudget.Entities.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\bin\Debug\net5.0\ref\FamilyBudget.Entities.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\bin\Debug\net5.0\FamilyBudget.Entities.pdb
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.csprojAssemblyReference.cache
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.AssemblyInfoInputs.cache
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.AssemblyInfo.cs
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.csproj.CoreCompileInputs.cache
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\ref\FamilyBudget.Entities.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Entities\obj\Debug\net5.0\FamilyBudget.Entities.pdb
