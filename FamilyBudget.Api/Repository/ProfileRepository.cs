@@ -17,67 +17,83 @@ namespace FamilyBudget.Api.Repository
         private MySqlConnection _conn;
         public async Task<IEnumerable<Profile>> GetAll()
         {
-            string sql = "SELECT * FROM profile WHERE Deleted = 0";       
+            _conn = new MySqlConnection(_conStr);
+            _conn.Open();
 
-            using (MySqlConnection connection = new MySqlConnection(_conStr))
-            {            
-                var profiles =  connection.QueryAsync<Profile>(sql).Result.ToList();
-                return profiles;               
-            }          
+            //var profiles = await _conn.GetAllAsync<Profile>();
+            //profiles = profiles.Where(w => w.Deleted == false);
+
+            var template = new Profile{Deleted = false};
+            var parameters = new DynamicParameters(template);
+            var sql = "SELECT * FROM profile WHERE Deleted = @Deleted;";
+
+            var profiles = await _conn.QueryAsync<Profile>(sql, parameters);
+
+            _conn.Close();
+
+            return profiles;         
         }
 
         public async Task<Profile> GetById(int id) 
         {
-            var parameters = new { Id = id };
-            string sql = "SELECT * FROM profile WHERE id = @Id AND deleted = 0;";
+             _conn = new MySqlConnection(_conStr);
+            _conn.Open();
 
-            using (MySqlConnection connection = new MySqlConnection(_conStr))
-            {
-                var profile = connection.QuerySingleOrDefaultAsync<Profile>(sql, parameters).Result;
+            //var profiles = await _conn.GetAllAsync<Profile>();
+            //profiles = profiles.Where(w => w.Deleted == false);
 
-                return profile;
-            }
+            var template = new Profile{Id = id, Deleted = false};
+            var parameters = new DynamicParameters(template);
+            var sql = "SELECT * FROM profile WHERE id = @Id AND Deleted = @Deleted;";
+
+            var profiles = await _conn.QueryAsync<Profile>(sql, parameters);
+
+            var profile = profiles.FirstOrDefault();
+
+            _conn.Close();
+
+            return profile;  
         }
 
         public async Task<Profile> Add(Profile profile)
         {
-            string sql = "INSERT INTO profile (name, description) Values (@Name, @Description);";
+            _conn = new MySqlConnection(_conStr);
+           _conn.Open();
 
-            using (MySqlConnection connection = new MySqlConnection(_conStr))
-            {
-                var affectedRows = connection.Execute(sql, new {Name = profile.Name, Description = profile.Description});               
+           await _conn.InsertAsync<Profile>(profile);
+           _conn.Close();
 
-                return profile;
-            }
+           return profile;
         }
 
         public async Task<Profile> Update(Profile profile) 
         {
-            string sql = "UPDATE profile SET Name = @Name, Description = @Description WHERE id = @Id;";
+             _conn = new MySqlConnection(_conStr);
+            _conn.Open();
 
-             using (MySqlConnection connection = new MySqlConnection(_conStr))
-            {            
-                var affectedRows = connection.Execute(sql,new {Id = profile.Id, Name = profile.Name, Description = profile.Description });
+            await _conn.UpdateAsync<Profile>(profile);
 
-                return profile;
-            }
+            _conn.Close();
+
+            return profile;
         }
 
         public async Task<bool> Delete(int id)
         {
-            string sql = "UPDATE profile SET Deleted = @Deleted WHERE id = @Id;";
+            _conn = new MySqlConnection(_conStr);
+            _conn.Open();
 
-             using (MySqlConnection connection = new MySqlConnection(_conStr))
-            {            
-                var affectedRows = connection.Execute(sql,new {Id = id, Deleted = 1});
+            var profile = await GetById(id);
 
-                if(affectedRows > 0){
-                    return true;
-                }
-
+            if(profile == null)
                 return false;
 
-            }
+            profile.Deleted = true;
+            await _conn.UpdateAsync<Profile>(profile);
+
+            _conn.Close();
+
+            return true;
         }
 
 

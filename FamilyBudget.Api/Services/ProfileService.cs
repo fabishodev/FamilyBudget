@@ -17,7 +17,7 @@ namespace FamilyBudget.Api.Services
             _profileRepository = profileRepository;
         }
 
-        public async Task<IEnumerable<Profile>>GetAll()
+        public async Task<IEnumerable<Profile>> GetAll()
         {
             var profiles = await _profileRepository.GetAll();
             return profiles;
