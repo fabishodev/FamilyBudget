@@ -6,7 +6,7 @@ using FamilyBudget.Entities;
 
 namespace FamilyBudget.Api.Repository
 {
-    public class UserFakeRepository : IUserRepository
+    public class UserFakeRepository     
     {
         private readonly List<User> _users;
         public UserFakeRepository()

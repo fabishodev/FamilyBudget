@@ -32,3 +32,4 @@ C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\obj\Debug\net5.0\FamilyBudget.Api.gen
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Dapper.dll
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Dapper.Contrib.dll
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\MySqlConnector.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Newtonsoft.Json.dll

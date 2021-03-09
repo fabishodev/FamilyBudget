@@ -8,18 +8,31 @@ using MySqlConnector;
 using Dapper;
 using Dapper.Contrib.Extensions;
 
+using FamilyBudget.Api.DataAccess.Interfaces;
+using System.Data.Common;
+
 namespace FamilyBudget.Api.Repository
 {
     public class ProfileRepository : IProfileRepository
     {
-         private const string _conStr =
-            "server=localhost; user=root; pwd=Passw0rd; database=familybudget; port=3306";
-        private MySqlConnection _conn;
+        //  private const string _conStr =
+        //     "server=localhost; user=root; pwd=Passw0rd; database=familybudget; port=3306";
+        // private MySqlConnection _conn;
+        private readonly IData _data;
+        public DbConnection DbConnection 
+        {
+            get{
+                return _data.DbConnection;
+            }
+        }
+        public ProfileRepository(IData data)
+        {
+            _data = data;
+        }
         public async Task<IEnumerable<Profile>> GetAll()
         {
-            _conn = new MySqlConnection(_conStr);
-            _conn.Open();
-
+            // _conn = new MySqlConnection(_conStr);
+            // _conn.Open();
             //var profiles = await _conn.GetAllAsync<Profile>();
             //profiles = profiles.Where(w => w.Deleted == false);
 
@@ -27,17 +40,13 @@ namespace FamilyBudget.Api.Repository
             var parameters = new DynamicParameters(template);
             var sql = "SELECT * FROM profile WHERE Deleted = @Deleted;";
 
-            var profiles = await _conn.QueryAsync<Profile>(sql, parameters);
-
-            _conn.Close();
-
+            var profiles = await _data.DbConnection.QueryAsync<Profile>(sql, parameters);
+            //_conn.Close();
             return profiles;         
         }
 
         public async Task<Profile> GetById(int id) 
-        {
-             _conn = new MySqlConnection(_conStr);
-            _conn.Open();
+        {          
 
             //var profiles = await _conn.GetAllAsync<Profile>();
             //profiles = profiles.Where(w => w.Deleted == false);
@@ -46,52 +55,39 @@ namespace FamilyBudget.Api.Repository
             var parameters = new DynamicParameters(template);
             var sql = "SELECT * FROM profile WHERE id = @Id AND Deleted = @Deleted;";
 
-            var profiles = await _conn.QueryAsync<Profile>(sql, parameters);
+            var profiles = await _data.DbConnection.QueryAsync<Profile>(sql, parameters);
 
             var profile = profiles.FirstOrDefault();
 
-            _conn.Close();
+         
 
             return profile;  
         }
 
         public async Task<Profile> Add(Profile profile)
-        {
-            _conn = new MySqlConnection(_conStr);
-           _conn.Open();
+        {            
 
-           await _conn.InsertAsync<Profile>(profile);
-           _conn.Close();
-
+           await _data.DbConnection.InsertAsync<Profile>(profile);          
            return profile;
         }
 
         public async Task<Profile> Update(Profile profile) 
-        {
-             _conn = new MySqlConnection(_conStr);
-            _conn.Open();
+        {         
 
-            await _conn.UpdateAsync<Profile>(profile);
-
-            _conn.Close();
-
+            await _data.DbConnection.UpdateAsync<Profile>(profile);
             return profile;
         }
 
         public async Task<bool> Delete(int id)
         {
-            _conn = new MySqlConnection(_conStr);
-            _conn.Open();
-
+           
             var profile = await GetById(id);
 
             if(profile == null)
                 return false;
 
             profile.Deleted = true;
-            await _conn.UpdateAsync<Profile>(profile);
-
-            _conn.Close();
+            await _data.DbConnection.UpdateAsync<Profile>(profile);        
 
             return true;
         }

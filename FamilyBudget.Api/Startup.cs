@@ -18,6 +18,11 @@ using FamilyBudget.Api.Services;
 using FamilyBudget.Api.Repository;
 using FamilyBudget.Api.Repository.Interfaces;
 
+using FamilyBudget.Api.DataAccess.Interfaces;
+using FamilyBudget.Api.DataAccess;
+
+using FamilyBudget.Api.Middleware;
+
 namespace FamilyBudget.Api
 {
     public class Startup
@@ -43,11 +48,15 @@ namespace FamilyBudget.Api
             //Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProfileService, ProfileService>();
-
             //Repositories
             //services.AddScoped<IUserRepository, UserFakeRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
+
+            services.AddScoped<IData, Data>();
+
+            services.AddSingleton<IConfiguration>(Configuration);
+
 
              services.AddCors(opt => {
                 opt.AddPolicy("CorsPolicy", policy => { 
@@ -103,6 +112,8 @@ namespace FamilyBudget.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FamilyBudget.Api v1"));
             }
+
+            app.ConfigureExceptionHandler();
 
             app.UseHttpsRedirection();
 
