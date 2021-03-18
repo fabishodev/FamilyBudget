@@ -15,7 +15,8 @@ build:
         - "cd ../FamilyBudget.Api"
         - "dotnet restore"
         - "dotnet build"
-        - "cd ../FamilyBudget/Test/FamilyBudget.Api.Test"
+        - "cd ../Tests/FamilyBudget.Entities.Test"        
         - "dotnet test"
-        - "cd ../FamilyBudget/Test/FamilyBudget.Entities.Test"
+        - "cd ../FamilyBudget.Api.Test"
         - "dotnet test"
+

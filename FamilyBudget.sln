@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBudget.Entities", "Fa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BE7C1743-981E-4C6B-B9C9-AA8991681726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBudget.Api.Tests", "Tests\FamilyBudget.Api.Tests\FamilyBudget.Api.Tests.csproj", "{FFA30EF3-0C25-4471-B5E5-6988A9C56C4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBudget.Api.Test", "Tests\FamilyBudget.Api.Test\FamilyBudget.Api.Test.csproj", "{FFA30EF3-0C25-4471-B5E5-6988A9C56C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBudget.Entities.Tests", "Tests\FamilyBudget.Entities.Tests\FamilyBudget.Entities.Tests.csproj", "{08914B5F-A8FB-4EB5-B8E2-53FE8F34091E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBudget.Entities.Test", "Tests\FamilyBudget.Entities.Test\FamilyBudget.Entities.Test.csproj", "{08914B5F-A8FB-4EB5-B8E2-53FE8F34091E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
