@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n4hsuW/ccvfLgZYtfC1yTi4W9JomRK+6GJP4xjNsZeB4xVcgeK/8wVG90bxnuXveuSwxEK3o/ZEQjIrACUTUVQ==",
+  "dgSpecHash": "QcBIr/0UUWVyqMLcPc8Zv9MerKUTcnGkyqGW3R+Zd0Ya8kuTG2yS3FiaR31NYDBIZP5M+PKUsqlchp8QPpPGBQ==",
   "success": true,
-  "projectFilePath": "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj",
+  "projectFilePath": "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

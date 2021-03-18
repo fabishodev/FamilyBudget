@@ -1,0 +1,21 @@
+image: mcr.microsoft.com/dotnet/sdk:5.0
+
+stages:
+    - build
+
+variables:
+    text: "Example.Test"
+
+build:
+    stage: build
+    script:
+        - "cd FamilyBudget.Entities"
+        - "dotnet restore"
+        - "dotnet build"
+        - "cd ../FamilyBudget.Api"
+        - "dotnet restore"
+        - "dotnet build"
+        - "cd ../FamilyBudget/Test/FamilyBudget.Api.Test"
+        - "dotnet test"
+        - "cd ../FamilyBudget/Test/FamilyBudget.Entities.Test"
+        - "dotnet test"

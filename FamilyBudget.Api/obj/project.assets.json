@@ -563,11 +563,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\FamilyBudget.Api.csproj",
+      "projectUniqueName": "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\FamilyBudget.Api.csproj",
       "projectName": "FamilyBudget.Api",
-      "projectPath": "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\FamilyBudget.Api.csproj",
+      "projectPath": "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\FamilyBudget.Api.csproj",
       "packagesPath": "C:\\Users\\fmaganaru\\.nuget\\packages\\",
-      "outputPath": "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\obj\\",
+      "outputPath": "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -589,8 +589,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj": {
-              "projectPath": "C:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj"
+            "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj": {
+              "projectPath": "c:\\DeLaSalle\\FamilyBudget\\FamilyBudget.Entities\\FamilyBudget.Entities.csproj"
             }
           }
         }
