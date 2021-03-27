@@ -33,3 +33,7 @@ C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Dapper.dll
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Dapper.Contrib.dll
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\MySqlConnector.dll
 C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\DeLaSalle\FamilyBudget\FamilyBudget.Api\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

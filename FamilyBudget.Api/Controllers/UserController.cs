@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FamilyBudget.Entities;
+using FamilyBudget.Entities.Dto;
 using FamilyBudget.Api.Services.Interfaces; 
 using FamilyBudget.Api.Services;
+using FamilyBudget.Api.Authorization;
 
 namespace FamilyBudget.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -22,7 +25,7 @@ namespace FamilyBudget.Api.Controllers
         //GET api/user
         [HttpGet]
         [Route("api/[controller]")]
-        public async Task<ActionResult<IEnumerable<User>>> GetAll()
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetAll()
         {
             var users = await _userService.GetAll();
             return Ok(users);//200
@@ -31,7 +34,7 @@ namespace FamilyBudget.Api.Controllers
         //GET api/user/id
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        public async Task<ActionResult<User>> GetById(int id)
+        public async Task<ActionResult<UserDto>> GetById(int id)
         {
             var user = await _userService.GetById(id);
             return Ok(user);
@@ -40,14 +43,14 @@ namespace FamilyBudget.Api.Controllers
         //POST api/user
         [HttpPost]
         [Route("api/[controller]")]
-        public async Task<ActionResult<User>> Add([FromBody] User user){
+        public async Task<ActionResult<UserDto>> Add([FromBody] UserDto user){
             await _userService.Add(user);
             return user;
         }
 
         [HttpPut]
         [Route("api/[controller]")]
-        public async Task<ActionResult<User>> Update([FromBody]User user)
+        public async Task<ActionResult<UserDto>> Update([FromBody]UserDto user)
         {
             await _userService.Update(user);
             return Created($"api/user/{user.Id}",user);   

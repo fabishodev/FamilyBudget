@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using FamilyBudget.Entities;
 using FamilyBudget.Api.Services.Interfaces;
 using FamilyBudget.Api.Services;
+using FamilyBudget.Api.Authorization;
 
 namespace FamilyBudget.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     public class ProfileController : ControllerBase
     {

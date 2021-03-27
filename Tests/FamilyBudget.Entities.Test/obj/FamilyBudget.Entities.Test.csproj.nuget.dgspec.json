@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj": {}
+    "c:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj": {}
   },
   "projects": {
-    "C:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj": {
+    "c:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj",
+        "projectUniqueName": "c:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj",
         "projectName": "FamilyBudget.Entities.Test",
-        "projectPath": "C:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj",
+        "projectPath": "c:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\FamilyBudget.Entities.Test.csproj",
         "packagesPath": "C:\\Users\\fmaganaru\\.nuget\\packages\\",
-        "outputPath": "C:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\obj\\",
+        "outputPath": "c:\\DeLaSalle\\FamilyBudget\\Tests\\FamilyBudget.Entities.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

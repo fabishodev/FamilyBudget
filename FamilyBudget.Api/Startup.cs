@@ -48,10 +48,12 @@ namespace FamilyBudget.Api
             //Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IAuthService, AuthService>();
             //Repositories
             //services.AddScoped<IUserRepository, UserFakeRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
 
             services.AddScoped<IData, Data>();
 
@@ -113,7 +115,7 @@ namespace FamilyBudget.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FamilyBudget.Api v1"));
             }
 
-            app.ConfigureExceptionHandler();
+            app.ConfigureExceptionHandler();            
 
             app.UseHttpsRedirection();
 
@@ -122,6 +124,8 @@ namespace FamilyBudget.Api
             app.UseAuthorization();
 
             app.UseCors("CorsPolicy");
+
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
