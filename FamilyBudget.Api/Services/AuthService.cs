@@ -18,7 +18,7 @@ namespace FamilyBudget.Api.Services
         private readonly IAuthRepository _repository;
         private readonly IUserRepository _userRepository;
 
-        public AuthService(AuthRepository repository, IUserRepository userRepository)
+        public AuthService(IAuthRepository repository, IUserRepository userRepository)
         {
             _repository = repository;
             _userRepository = userRepository;

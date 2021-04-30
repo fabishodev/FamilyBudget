@@ -30,7 +30,7 @@ namespace FamilyBudget.Api.Repository
 
         public async Task<IEnumerable<User>> GetAll()
         {
-            return _users;
+            return  _users;
         }
         public async Task<User> GetById(int id) 
         {

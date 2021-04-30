@@ -49,11 +49,16 @@ namespace FamilyBudget.Api
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IExpenseService, ExpenseService>();//IExpenseTypesService
+            services.AddScoped<IExpenseTypesService, ExpenseTypesService>();
+
             //Repositories
             //services.AddScoped<IUserRepository, UserFakeRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IExpenseRepository, ExpenseRepository>();
+            services.AddScoped<IExpenseTypesRepository, ExpenseTypesRepository>();
 
             services.AddScoped<IData, Data>();
 
@@ -125,7 +130,7 @@ namespace FamilyBudget.Api
 
             app.UseCors("CorsPolicy");
 
-            app.UseMiddleware<JwtMiddleware>();
+            //app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

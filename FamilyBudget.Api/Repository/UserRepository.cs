@@ -29,7 +29,6 @@ namespace FamilyBudget.Api.Repository
             _data = data;
         }
 
-
         public async Task<UserDto> Add(UserDto user)
         {
            await _data.DbConnection.InsertAsync<User>(user);           
@@ -49,6 +48,7 @@ namespace FamilyBudget.Api.Repository
                             u.Id,
                             u.FirstName,
                             u.LastName,
+                            u.UserName,
                             u.ProfileId,
                             p.Id, 
                             p.Name,
@@ -66,6 +66,7 @@ namespace FamilyBudget.Api.Repository
                         Id = user.Id,
                         FirstName = user.FirstName,
                         LastName = user.LastName,
+                        UserName = user.UserName,
                         ProfileId = profile.Id,
                         Profile = profile,
                     };
@@ -85,6 +86,7 @@ namespace FamilyBudget.Api.Repository
                             u.Id,
                             u.FirstName,
                             u.LastName,
+                            u.UserName,
                             u.ProfileId,
                             p.Id, 
                             p.Name,
@@ -103,6 +105,7 @@ namespace FamilyBudget.Api.Repository
                         Id = user.Id,
                         FirstName = user.FirstName,
                         LastName = user.LastName,
+                        UserName = user.UserName,
                         ProfileId = profile.Id,
                         Profile = profile,
                     };

@@ -11,7 +11,7 @@ using FamilyBudget.Api.Authorization;
 
 namespace FamilyBudget.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {

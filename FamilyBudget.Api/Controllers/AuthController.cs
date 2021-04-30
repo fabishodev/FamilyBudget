@@ -18,7 +18,7 @@ namespace FamilyBudget.Api.Controllers
         private readonly IAuthService _authService;
 
 
-        public AuthController(AuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
